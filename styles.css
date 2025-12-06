@@ -1,0 +1,133 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#94a3b8;
+  --accent:#7c3aed;
+  --glass: rgba(255,255,255,0.02);
+  --max-w:1100px;
+  --radius:12px;
+  --gap:16px;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box; margin:0; padding:0}
+body{
+  font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+  background:linear-gradient(180deg,#071029,#081526);
+  color:#e6eef8;
+  line-height:1.45;
+  padding:20px;
+}
+
+.container{max-width:var(--max-w); margin:auto}
+
+/* Header */
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#0ea5a0);display:flex;align-items:center;justify-content:center;font-weight:700}
+h1{font-size:20px;color:white}
+.lead{color:var(--muted);font-size:13px}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:20px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}}
+
+/* Card */
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:var(--radius);
+  padding:18px;
+  border:1px solid rgba(255,255,255,0.05);
+  box-shadow:0 6px 18px rgba(2,6,23,0.6);
+  margin-bottom:20px;
+}
+
+/* Hero */
+.hero{display:flex;justify-content:space-between;gap:20px;margin-bottom:12px}
+.hero h2{margin-bottom:6px}
+.pill{background:var(--glass);padding:6px 12px;border-radius:20px;font-size:12px;color:var(--muted)}
+
+/* Note form */
+.note-form{display:flex;gap:12px;align-items:flex-start;margin-top:12px}
+textarea{
+  flex:1;
+  min-height:84px;
+  padding:12px;
+  border-radius:10px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.08);
+  color:white;
+  resize:vertical;
+}
+.actions{display:flex;flex-direction:column;gap:8px}
+button{
+  background:var(--accent);
+  border:none;
+  padding:10px 14px;
+  border-radius:10px;
+  color:white;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.2s;
+}
+button:hover{opacity:0.85}
+button.ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.15);
+  color:var(--muted);
+}
+
+/* Controls */
+.controls{display:flex;gap:12px;margin-top:12px}
+input[type="search"],select{
+  flex:1;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:transparent;
+  color:white;
+}
+select{flex:none;width:120px}
+
+/* Notes grid */
+.notes-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:12px;
+  margin-top:16px;
+}
+.note-card{
+  background:var(--card);
+  padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.05);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.note-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
+.note-text{white-space:pre-wrap;min-height:60px}
+.note-actions{display:flex;gap:8px}
+.note-actions button{padding:6px 10px;font-size:12px}
+
+/* Sidebar */
+.sidebar .card h3{margin-bottom:10px}
+.stat{
+  display:flex;
+  justify-content:space-between;
+  padding:10px;
+  background:var(--glass);
+  border-radius:8px;
+  margin-bottom:8px;
+}
+.btn-row{display:flex;gap:8px;margin-top:10px}
+
+/* Footer */
+footer{
+  margin-top:20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Utilities */
